@@ -1,0 +1,22 @@
+package com.example.websockettest.controllers;
+
+import com.example.websockettest.entity.Character;
+import com.example.websockettest.repos.CharacterRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CharacterController {
+
+    @Autowired
+    private CharacterRepository characterRepository;
+
+    @GetMapping("/character")
+    public Character greeting(@RequestParam(value = "name") String name) {
+        return characterRepository.findByName(name);
+    }
+
+
+}

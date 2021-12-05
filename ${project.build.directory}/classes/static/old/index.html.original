@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Chat WebSocket</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script type="text/javascript">
+        var ws = null;
+
+        function connect() {
+            var socket = new WebSocket('ws://localhost:8080/greeting');
+            ws = Stomp.over(socket);
+
+            ws.connect({}, function(frame) {
+                ws.subscribe("/user/queue/errors", function(message) {
+                    alert("Error " + message.body);
+                });
+
+                ws.subscribe("/queue/reply", function(message) {
+                    alert("Message " + message.body);
+                });
+            }, function(error) {
+                alert("STOMP error " + error);
+            });
+        }
+
+        function sendMessage() {
+            ws.send('/app/chat', {}, JSON.stringify(
+                {
+                    body: "body",
+                    channelName: "hello channel",
+                    timestamp: new Date()
+                }
+            ));
+        }
+
+        function disconnect() {
+            if (ws != null) {
+                ws.close();
+            }
+            console.log("Disconnected");
+        }
+
+    </script>
+
+</head>
+
+<body onload="disconnect()">
+<div>
+
+
+    <div>
+        <input type="text" id="from" placeholder="Choose a nickname"/>
+    </div>
+    <br />
+    <div>
+        <button id="connect" onclick="connect();">Connect</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
+    </div>
+    <br />
+    <div id="conversationDiv">
+        <input type="text" id="text" placeholder="Write a message..."/>
+        <button id="sendMessage" onclick="sendMessage();">Send</button>
+        <p id="response"></p>
+    </div>
+</div>
+
+</body>
+</html>
