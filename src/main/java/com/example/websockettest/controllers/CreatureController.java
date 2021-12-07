@@ -25,4 +25,9 @@ public class CreatureController {
         return creatureRepository.findAll();
     }
 
+    @GetMapping("/russell")
+    public String sendString() {
+        return "Test String";
+    }
+
 }
