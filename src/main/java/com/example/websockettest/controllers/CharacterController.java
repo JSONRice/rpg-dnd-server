@@ -19,6 +19,4 @@ public class CharacterController {
     public Character greeting(@RequestParam(value = "name") String name) {
         return characterRepository.findByName(name);
     }
-
-
 }
