@@ -52,12 +52,5 @@ public class WebSocketTestApplication implements CommandLineRunner {
         for (Customer customer : repository.findByLastName("Smith")) {
             System.out.println(customer);
         }
-
-        System.out.println("Rollo character:");
-        System.out.println(charRepo.findByUsername("rlongo").getHitpoint().getAdj());
-        System.out.println(charRepo.findByUsername("rlongo").getWeapons().get(0).getName());
-
-        System.out.println(loginService.authenticate("rlongo", "blah"));
     }
-
 }
