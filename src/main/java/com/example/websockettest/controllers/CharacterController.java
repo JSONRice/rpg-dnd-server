@@ -16,7 +16,7 @@ public class CharacterController {
     private CharacterRepository characterRepository;
 
     @GetMapping("/character")
-    public Character greeting(@RequestParam(value = "name") String name) {
-        return characterRepository.findByName(name);
+    public Character greeting(@RequestParam(value = "username") String username) {
+        return characterRepository.findByUsername(username);
     }
 }

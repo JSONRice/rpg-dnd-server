@@ -20,6 +20,7 @@ public class Character {
     String backStory;
     String role;
     String name;
+    String username;
     User player;
     String gender;
     Stat age;
@@ -62,7 +63,7 @@ public class Character {
     public Character() {
     }
 
-    public Character(Boolean active, String backStory, String role, String name, User player, String gender, Stat age, String hair, String eyes, String skin, Stat height, Stat weight, String alignment, Stat size, ArrayList<String> diety, Map<String, Double> race, Integer reach, Stat experience, ArrayList<LearningClass> classes, ArrayList<Attribute> auras, ArrayList<Attribute> senses, Stat hitpoint, Integer damage, Purse purse, ArrayList<Attribute> languages, ArrayList<Attribute> toolProfs, ArrayList<Attribute> weaponProfs, ArrayList<Attribute> armorProfs, ArrayList<Attribute> abilities, ArrayList<Attribute> abilityMods, ArrayList<Skill> skills, ArrayList<Attribute> allSaves, Stat armorClass, Stat initiative, Stat speed, Stat encumbrance, Stat carriedWeight, ArrayList<Inventory> inventories, ArrayList<Spell> spells, ArrayList<Special> specials, ArrayList<Arms> weapons, ArrayList<Arms> defenses) {
+    public Character(Boolean active, String backStory, String role, String name, User player, String gender, Stat age, String hair, String eyes, String skin, Stat height, Stat weight, String alignment, Stat size, ArrayList<String> diety, Map<String, Double> race, Integer reach, Stat experience, ArrayList<LearningClass> classes, ArrayList<Attribute> auras, ArrayList<Attribute> senses, Stat hitpoint, Integer damage, Purse purse, ArrayList<Attribute> languages, ArrayList<Attribute> toolProfs, ArrayList<Attribute> weaponProfs, ArrayList<Attribute> armorProfs, ArrayList<Attribute> abilities, ArrayList<Attribute> abilityMods, ArrayList<Skill> skills, ArrayList<Attribute> allSaves, Stat armorClass, Stat initiative, Stat speed, Stat encumbrance, Stat carriedWeight, ArrayList<Inventory> inventories, ArrayList<Spell> spells, ArrayList<Special> specials, ArrayList<Arms> weapons, ArrayList<Arms> defenses, String username) {
         this.active = active;
         this.backStory = backStory;
         this.role = role;
@@ -105,5 +106,6 @@ public class Character {
         this.specials = specials;
         this.weapons = weapons;
         this.defenses = defenses;
+        this.username = username;
     }
 }

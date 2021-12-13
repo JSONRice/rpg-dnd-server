@@ -50,9 +50,8 @@ public class WebSocketTestApplication implements CommandLineRunner {
         }
 
         System.out.println("Rollo character:");
-        System.out.println(charRepo.findByName("Rollo").getHitpoint().getAdj());
-        System.out.println(charRepo.findByName("Rollo").getWeapons().get(0).getName());
-
+        System.out.println(charRepo.findByUsername("rlongo").getHitpoint().getAdj());
+        System.out.println(charRepo.findByUsername("rlongo").getWeapons().get(0).getName());
     }
 
 }

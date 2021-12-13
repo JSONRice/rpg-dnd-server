@@ -23,7 +23,7 @@ public class LoginService {
     public Character authenticate(String username, String password) {
         String passwd = credentials.get(username);
         if (password.equals(passwd)) {
-            return characterRepository.findByName(username);
+            return characterRepository.findByUsername(username);
         }
 
         return null;
