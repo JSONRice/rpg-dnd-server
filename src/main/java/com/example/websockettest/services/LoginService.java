@@ -25,6 +25,6 @@ public class LoginService {
             return characterRepository.findByUsername(username);
         }
 
-        return (Character) new Object();
+        return null;
     }
 }
