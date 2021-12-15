@@ -18,7 +18,7 @@ import java.util.Date;
 
 
 @Controller
-@CrossOrigin(origins = "http://localhost:7000")
+@CrossOrigin(origins = "https://rpg-dnd-client.herokuapp.com/")
 public class ChatController {
     // allows us to programmatically send a message
     private final SimpMessagingTemplate simpMessagingTemplate;
