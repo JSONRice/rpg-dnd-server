@@ -13,10 +13,9 @@ public class LoginService {
     @Autowired
     private CharacterRepository characterRepository;
 
-    // TODO: figure out a safe place for the credentials (this is obviously temporary)
     private final HashMap<String, String> credentials = new HashMap<>() {{
-        put("jsnrice", "My$ig5ecretP@sswd");
-        put("rlongo", "D&Dm@s$er4evEr");
+        put("jsnrice", "password");
+        put("rlongo", "password");
     }};
 
     /**
