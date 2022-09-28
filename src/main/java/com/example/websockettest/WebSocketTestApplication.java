@@ -2,8 +2,6 @@ package com.example.websockettest;
 
 import com.example.websockettest.entity.Customer;
 import com.example.websockettest.entity.CustomerRepository;
-import com.example.websockettest.repos.CharacterRepository;
-import com.example.websockettest.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,12 +12,6 @@ public class WebSocketTestApplication implements CommandLineRunner {
 
     @Autowired
     private CustomerRepository repository;
-
-    @Autowired
-    private CharacterRepository charRepo;
-
-    @Autowired
-    private LoginService loginService;
 
     public static void main(String[] args) {
         SpringApplication.run(WebSocketTestApplication.class, args);
