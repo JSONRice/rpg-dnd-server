@@ -14,8 +14,8 @@ public class LoginService {
     private CharacterRepository characterRepository;
 
     private final HashMap<String, String> credentials = new HashMap<>() {{
-        put("jsnrice", "password");
-        put("rlongo", "password");
+        put("jsnrice@gmail.com", "password");
+        put("rlongo.office@gmail.com", "password");
     }};
 
     /**
@@ -26,10 +26,10 @@ public class LoginService {
      * @param password to match against
      * @return can be null or a Character
      */
-    public Character authenticate(String username, String password) {
-        String passwd = credentials.get(username);
+    public Character authenticate(String email, String password) {
+        String passwd = credentials.get(email);
         if (password.equals(passwd)) {
-            return characterRepository.findByUsername(username);
+            return characterRepository.findByUsername(email);
         }
 
         return null;
